@@ -6,7 +6,10 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: connectionString
+    connection: connectionString,
+      ssl: {
+        rejectUnauthorized: false,
+      },
   },
 
   staging: {
