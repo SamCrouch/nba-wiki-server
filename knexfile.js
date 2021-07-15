@@ -7,10 +7,15 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: connectionString,
+    connection: {
+      connectionString,
       ssl: {
         rejectUnauthorized: false,
       },
+    },
+    migrations: {
+      tableName: "knex_migrations",
+    },
   },
 
   staging: {
