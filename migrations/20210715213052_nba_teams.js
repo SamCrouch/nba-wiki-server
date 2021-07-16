@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-  return knex.SVGPathSegCurvetoCubicSmoothAbs.createTable('nba_teams', table => {
+  return knex.schema.createTable('nba_teams', table => {
     table.increments('id');
     table.string('team_name').notNullable();
     table.string('city').notNullable();
