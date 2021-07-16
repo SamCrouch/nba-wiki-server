@@ -4,7 +4,7 @@ const app = express()
 const port = process.env.PORT || 80;
 
 app.use(express.json())
-
+app.use(cors());
 
 app.get('/', function(req, res) {
     knex.select('*')
@@ -16,4 +16,4 @@ app.get('/', function(req, res) {
             }))
 })
 
-app.listen(port, () => console.log(`Example app listening at nba-wiki-sam.herokuapp.com`))
+app.listen(port, () => console.log(`app listening at nba-wiki-sam.herokuapp.com`))
