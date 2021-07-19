@@ -10,6 +10,7 @@ app.use(cors());
 app.get('/', function(req, res) {
     knex.select('*')
         .from('nba_teams')
+        .orderBy('team_name', 'asc')
         .then(data => res.status(200).json(data))
         .catch(err =>
             res.status(404).json({
