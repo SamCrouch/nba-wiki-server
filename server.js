@@ -19,7 +19,7 @@ app.get('/', function(req, res) {
 
 app.post('/:teamName', function(req, res) {
     knex('nba_teams')
-    .where({team_name: req.params.teamName})
+    .where({team_name: req.body.team_name})
     .insert({
         team_name: req.body.team_name,
         city: req.body.city,
