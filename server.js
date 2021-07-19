@@ -17,4 +17,19 @@ app.get('/', function(req, res) {
             }))
 })
 
+app.post('/:teamName', function(req, res) {
+    knex('nba_teams')
+    .where({team_name: teamName})
+    .insert({
+        team_name: req.body.team_name,
+        city: req.body.city,
+        arena: req.body.arena,
+        conference: req.body.conference,
+        logo_url: req.body.logo_url,
+        coach: req.body.coach,
+        roster: req.body.roster,
+        titles: req.body.titles
+    })
+})
+
 app.listen(port, () => console.log(`app listening at nba-wiki-sam.herokuapp.com`))
