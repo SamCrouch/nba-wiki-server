@@ -30,6 +30,7 @@ app.post('/:teamName', function(req, res) {
         roster: req.body.roster,
         titles: req.body.titles
     })
+    .then(() => res.status(201).send("Team Information Updated"))
 })
 
 app.listen(port, () => console.log(`app listening at nba-wiki-sam.herokuapp.com`))
