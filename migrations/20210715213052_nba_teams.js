@@ -6,6 +6,7 @@ exports.up = function(knex) {
     table.string('city').notNullable();
     table.string('arena').notNullable();
     table.string('conference').notNullable();
+    table.string('logo_url').notNullable();
   })
 };
 
