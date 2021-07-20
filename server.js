@@ -18,9 +18,16 @@ app.get('/', function(req, res) {
             }))
 })
 
-app.patch('/:teamName', function(req, res) {
+app.get('/:teamName', function(req, res) {
+    knex.select('*')
+    .from('nba_teams')
+    .where({team_name: req.params.teamName})
+    .then(data => res.status(200).json(data))
+})
+
+app.post('/:teamName', function(req, res) {
     knex('nba_teams')
-    .where({team_name: req.body.team_name})
+    .where({team_name: req.params.teamName})
     .update({
         team_name: req.body.team_name,
         city: req.body.city,
