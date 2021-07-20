@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
             }))
 })
 
-app.post('/:teamName', function(req, res) {
+app.patch('/:teamName', function(req, res) {
     knex('nba_teams')
     .where({team_name: req.body.team_name})
     .update({
